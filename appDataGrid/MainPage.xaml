@@ -10,24 +10,17 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
-        
+
         <local:StatusConvert x:Key="ButtonContentConverter" />
-        
         <local:BackgroungConvert x:Key="BackgroungConvert" />
-
         <local:ButtonBackgroungConvert x:Key="ButtonBackgroungConvert" />
-
+<!--
+        attention is not called -BackgroungConvert- ?
+-->
         <Style TargetType="controls:DataGridRow"  >
             <Setter Property="Background" Value="{Binding Status, Converter={StaticResource BackgroungConvert}}"/>
             <Setter Property="Foreground" Value="Blue" />
         </Style>
-
-<!--
-        <Style x:Key="IdStyle" TargetType="controls:DataGridCell">
-            <Setter Property="Foreground" Value="{Binding Status, Converter={StaticResource BackgroungConvert}}" />
-            <Setter Property="Background"  Value="Red" />
-        </Style>
--->
 
     </Page.Resources>
 
@@ -68,7 +61,6 @@
                     </Style>
                 </controls:DataGrid.RowStyle>
 -->                
-
                 <controls:DataGrid.Columns>
                     <controls:DataGridTextColumn Binding="{Binding Data1}" Header="D1" />
                     <controls:DataGridTextColumn Binding="{Binding Data2}" Header="D2" />
